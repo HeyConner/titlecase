@@ -80,5 +80,16 @@
             //Assert
             $this->assertEquals("Beowolf On the Rocks", $result);
         }
+        function test_makeTitleCase_mixedCaps() {
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "BeoWolf aNd mE";
+
+            //Act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //Assert
+            $this->assertEquals("Beowolf and Me", $result);
+        }
     }
 ?>
