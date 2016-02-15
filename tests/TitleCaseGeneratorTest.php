@@ -21,13 +21,13 @@
         {
             //Arrange
             $test_TitleCaseGenerator = new TitleCaseGenerator;
-            $input = "the little mermaid";
+            $input = "beowolf begins";
 
             //Act$
             $result = $test_TitleCaseGenerator->makeTitleCase($input);
 
             //Assert
-            $this->assertEquals("The Little Mermaid", $result);
+            $this->assertEquals("Beowolf Begins", $result);
         }
 
         function test_makeTitleCase_ignoreDesignated()
@@ -41,6 +41,19 @@
 
             //Assert
             $this->assertEquals("Beowolf from Brighton Beach", $result);
+        }
+
+        function test_makeTitleCase_capsDesignatedIfFirst()
+        {
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "the lord of the rings";
+
+            //Act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //Assert
+            $this->assertEquals("The Lord of the Rings", $result);
         }
     }
 ?>
