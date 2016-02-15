@@ -55,5 +55,30 @@
             //Assert
             $this->assertEquals("The Lord of the Rings", $result);
         }
+
+        function test_makeTitleCase_handleNonLetters() {
+
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "the 57 beowolf alternative endings!!";
+
+            //Act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //Assert
+            $this->assertEquals("The 57 Beowolf Alternative Endings!!", $result);
+        }
+
+        function test_makeTitleCase_allCaps(){
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "BEOWOLF ON THE ROCKS";
+
+            //Act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //Assert
+            $this->assertEquals("Beowolf On the Rocks", $result);
+        }
     }
 ?>

@@ -4,6 +4,7 @@ class TitleCaseGenerator
 {
     function makeTitleCase($input_title)
     {
+        $input_title= strtolower($input_title);
         $input_array_of_words = explode(" ", $input_title);
         $output_titlecased = array();
         $exceptions = array("to", "from", "for", "a", "and", "the", "of");
